@@ -1,2 +1,7 @@
-# Github actions CI test
-GitHub Actions test
+# DevOps-Academy
+
+DevOps working directory.
+
+## GitHub Actions
+
+GitHub Actions CI test.
