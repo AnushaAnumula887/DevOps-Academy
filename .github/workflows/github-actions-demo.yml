@@ -1,31 +1,23 @@
-name: Github Actions Demo
+name: Simple CI Pipeline
 
-run-name: ${{ github.actor }} is testing out Github Actions
-
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  Explore-Github-Actions:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show event
-        run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
-
-      - name: Show runner
-        run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-
-      - name: Show branch
-        run: echo "The name of your branch is ${{ github.ref }}."
-
-      - name: Checkout repository code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Show workflow status
-        run: echo "The workflow is now ready to test your code on the runner."
+      - name: Show message
+        run: echo "Hello! GitHub Actions pipeline is running."
 
-      - name: List files in repository
-        run: ls -la ${{ github.workspace }}
+      - name: Show files
+        run: ls -la
 
-      - name: Show job status
-        run: echo "This job's status is ${{ job.status }}."
+      - name: Pipeline success
+        run: echo "CI Pipeline completed successfully!"
